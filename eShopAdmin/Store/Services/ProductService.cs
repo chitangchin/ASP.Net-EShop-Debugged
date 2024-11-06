@@ -12,6 +12,7 @@ public class ProductService
     {
 		_logger = logger;
         this.httpClient = httpClient;
+
     }
     public async Task<List<Product>> GetProducts()
     {
@@ -36,7 +37,7 @@ public class ProductService
 		}
 		catch (Exception ex)
 		{
-			_logger.LogError(ex, "Error during GetProducts.");
+			_logger.LogError(ex, $"Error during GetProducts.");
 		}
 
 		return products ?? new List<Product>();
